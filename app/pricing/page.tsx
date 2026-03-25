@@ -7,8 +7,6 @@ export const metadata: Metadata = {
     'Transparent pricing for small business marketing services — retainer packages, à la carte services, one-time projects, and add-ons.',
 }
 
-// ─── Data ───────────────────────────────────────────────────────────────────
-
 const packages = [
   {
     name: 'Starter',
@@ -17,9 +15,7 @@ const packages = [
     hours: '4–6 hrs/month',
     description: 'Perfect for businesses just beginning their digital marketing journey.',
     services: ['Single Platform Service (your choice)', 'Monthly Reporting'],
-    cta: 'Get Started',
     featured: false,
-    color: '#99c3fb',
   },
   {
     name: 'Growth',
@@ -27,15 +23,8 @@ const packages = [
     period: '/month',
     hours: '12–16 hrs/month',
     description: 'The most popular choice for small businesses ready to expand their reach.',
-    services: [
-      'Social Media (2–3 platforms)',
-      'SEO Basics',
-      'Content Creation',
-      'Regular Communication',
-    ],
-    cta: 'Most Popular',
+    services: ['Social Media (2–3 platforms)', 'SEO Basics', 'Content Creation', 'Regular Communication'],
     featured: true,
-    color: '#99c3fb',
   },
   {
     name: 'Premium',
@@ -43,16 +32,8 @@ const packages = [
     period: '/month',
     hours: '18–23 hrs/month',
     description: 'Full-service marketing for businesses serious about growth.',
-    services: [
-      'Social Media (3–4 platforms)',
-      'SEO',
-      'Email Marketing',
-      'Advertising (Optional)',
-      'Priority Communication',
-    ],
-    cta: 'Get Started',
+    services: ['Social Media (3–4 platforms)', 'SEO', 'Email Marketing', 'Advertising (Optional)', 'Priority Communication'],
     featured: false,
-    color: '#99c3fb',
   },
 ]
 
@@ -106,40 +87,46 @@ const addOns = [
   { service: 'Social Media Ad Management', price: '$500 + 15% of ad spend', notes: 'Minimum $500 ad spend' },
 ]
 
-// ─── Sub-components ──────────────────────────────────────────────────────────
-
 function SectionHeader({ label, title, sub }: { label: string; title: React.ReactNode; sub?: string }) {
   return (
     <div className="text-center mb-12">
       <div className="section-label mx-auto">{label}</div>
-      <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-3">{title}</h2>
+      <h2 className="text-2xl md:text-4xl font-black leading-tight mb-3" style={{ color: '#1a2b4a' }}>{title}</h2>
       {sub && <p className="text-ink-40 max-w-xl mx-auto text-sm leading-relaxed">{sub}</p>}
     </div>
   )
 }
 
-// ─── Page ────────────────────────────────────────────────────────────────────
-
 export default function PricingPage() {
   return (
-    <div className="bg-bg min-h-screen">
-      {/* Hero */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-blue-glow pointer-events-none" />
+    <div className="bg-white min-h-screen">
+
+      {/* Hero — bright blue fill */}
+      <section
+        className="relative pt-32 pb-20 md:pt-40 md:pb-24 text-center overflow-hidden"
+        style={{ backgroundColor: '#4a90e2' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 90% 70% at 60% 40%, rgba(255,255,255,0.07) 0%, transparent 60%)' }}
+        />
+        {/* Decorative circles */}
+        <div className="absolute top-12 right-20 w-48 h-48 rounded-full border border-white/15 animate-float pointer-events-none" style={{ animationDelay: '0s' }} />
+        <div className="absolute bottom-8 left-16 w-32 h-32 rounded-full border border-white/10 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }} />
+
         <div className="relative z-10 container-site px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-blue border border-blue/30 bg-blue/5 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
             Transparent Pricing
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5">
-            Simple, Honest{' '}
-            <span className="gradient-text">Pricing</span>
+            Simple, Honest Pricing
           </h1>
-          <p className="text-lg text-ink-40 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
             No hidden fees. No surprise invoices. Just clear, straightforward pricing for
             marketing services that move the needle for your small business.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-xs text-ink-40 font-medium">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-white/70 font-semibold">
             {['✓ Month-to-month', '✓ No long-term contracts', '✓ Free discovery call'].map((t) => (
               <span key={t}>{t}</span>
             ))}
@@ -147,8 +134,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── Retainer Packages ── */}
-      <section className="section-pad bg-bg">
+      {/* Retainer Packages */}
+      <section className="section-pad bg-white">
         <div className="container-site px-6 lg:px-8">
           <SectionHeader
             label="Monthly Retainers"
@@ -162,21 +149,21 @@ export default function PricingPage() {
                 key={pkg.name}
                 className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
                   pkg.featured
-                    ? 'border-blue bg-bg-card shadow-2xl shadow-blue/20 scale-[1.02]'
-                    : 'border-bg-border bg-bg-card hover:border-blue/30'
-                }`}
+                    ? 'border-blue-dark shadow-2xl shadow-blue/15 scale-[1.02]'
+                    : 'border-bg-border hover:border-blue/50 hover:shadow-lg hover:shadow-blue/8'
+                } bg-white`}
               >
                 {pkg.featured && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold bg-blue text-bg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold bg-blue-dark text-white shadow-md">
                     Most Popular
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-black text-white mb-1">{pkg.name}</h3>
+                  <h3 className="text-xl font-black mb-1" style={{ color: '#1a2b4a' }}>{pkg.name}</h3>
                   <p className="text-xs text-ink-40 mb-4">{pkg.description}</p>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-black text-blue">{pkg.price}</span>
+                    <span className="text-4xl font-black text-blue-dark">{pkg.price}</span>
                     <span className="text-ink-40 text-sm">{pkg.period}</span>
                   </div>
                   <p className="text-xs text-ink-40 mt-1">{pkg.hours}</p>
@@ -187,7 +174,7 @@ export default function PricingPage() {
                   <ul className="space-y-3">
                     {pkg.services.map((s) => (
                       <li key={s} className="flex items-start gap-2.5 text-sm text-ink-40">
-                        <svg className="w-4 h-4 text-blue shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-blue-dark shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                         {s}
@@ -202,11 +189,11 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className={`mt-8 w-full py-3 rounded-full text-sm font-bold text-center transition-all duration-200 ${
                     pkg.featured
-                      ? 'bg-blue text-bg hover:bg-blue-light shadow-lg shadow-blue/25'
-                      : 'border border-blue/30 text-blue hover:bg-blue/10'
+                      ? 'bg-blue-dark text-white hover:opacity-90 shadow-md shadow-blue-dark/20'
+                      : 'border border-blue-dark text-blue-dark hover:bg-blue-light'
                   }`}
                 >
-                  {pkg.cta === 'Most Popular' ? 'Get Started' : pkg.cta}
+                  Get Started
                 </a>
               </div>
             ))}
@@ -214,7 +201,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── À La Carte ── */}
+      {/* À La Carte */}
       <section className="section-pad bg-bg-surface">
         <div className="container-site px-6 lg:px-8">
           <SectionHeader
@@ -224,9 +211,8 @@ export default function PricingPage() {
           />
 
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-bg-border overflow-hidden">
-              {/* Header row */}
-              <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-bg-card border-b border-bg-border">
+            <div className="rounded-2xl border border-bg-border overflow-hidden shadow-sm">
+              <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-white border-b border-bg-border">
                 <div className="col-span-5 text-xs font-bold uppercase tracking-widest text-ink-40">Service</div>
                 <div className="col-span-2 text-xs font-bold uppercase tracking-widest text-ink-40">Price</div>
                 <div className="col-span-2 text-xs font-bold uppercase tracking-widest text-ink-40">Hours</div>
@@ -236,10 +222,10 @@ export default function PricingPage() {
               {alaCarte.map((row, i) => (
                 <div
                   key={i}
-                  className="grid grid-cols-12 gap-4 px-6 py-5 border-b border-bg-border last:border-0 hover:bg-blue/3 transition-colors"
+                  className="grid grid-cols-12 gap-4 px-6 py-5 border-b border-bg-border last:border-0 hover:bg-bg-surface transition-colors bg-white"
                 >
-                  <div className="col-span-5 text-sm font-semibold text-white">{row.service}</div>
-                  <div className="col-span-2 text-sm font-bold text-blue">{row.price}</div>
+                  <div className="col-span-5 text-sm font-semibold" style={{ color: '#1a2b4a' }}>{row.service}</div>
+                  <div className="col-span-2 text-sm font-bold text-blue-dark">{row.price}</div>
                   <div className="col-span-2 text-sm text-ink-40">{row.hours}</div>
                   <div className="col-span-3 text-xs text-ink-40 leading-relaxed">{row.notes}</div>
                 </div>
@@ -249,8 +235,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── Project-Based ── */}
-      <section className="section-pad bg-bg">
+      {/* Project-Based */}
+      <section className="section-pad bg-white">
         <div className="container-site px-6 lg:px-8">
           <SectionHeader
             label="One-Time Projects"
@@ -262,13 +248,12 @@ export default function PricingPage() {
             {projectBased.map((group) => (
               <div key={group.group}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-bold uppercase tracking-widest text-blue">{group.group}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-blue-dark">{group.group}</span>
                   <div className="flex-1 h-px bg-bg-border" />
                 </div>
 
-                <div className="rounded-2xl border border-bg-border overflow-hidden">
-                  {/* Header */}
-                  <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-3 bg-bg-card border-b border-bg-border">
+                <div className="rounded-2xl border border-bg-border overflow-hidden shadow-sm">
+                  <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-3 bg-bg-surface border-b border-bg-border">
                     <div className="col-span-4 text-xs font-bold uppercase tracking-widest text-ink-40">Service</div>
                     <div className="col-span-2 text-xs font-bold uppercase tracking-widest text-ink-40">Price</div>
                     <div className="col-span-2 text-xs font-bold uppercase tracking-widest text-ink-40">Timeline</div>
@@ -278,10 +263,10 @@ export default function PricingPage() {
                   {group.items.map((row, i) => (
                     <div
                       key={i}
-                      className="px-6 py-5 border-b border-bg-border last:border-0 hover:bg-blue/3 transition-colors md:grid md:grid-cols-12 md:gap-4 flex flex-col gap-1"
+                      className="px-6 py-5 border-b border-bg-border last:border-0 hover:bg-bg-surface transition-colors bg-white md:grid md:grid-cols-12 md:gap-4 flex flex-col gap-1"
                     >
-                      <div className="md:col-span-4 text-sm font-semibold text-white">{row.service}</div>
-                      <div className="md:col-span-2 text-sm font-bold text-blue">{row.price}</div>
+                      <div className="md:col-span-4 text-sm font-semibold" style={{ color: '#1a2b4a' }}>{row.service}</div>
+                      <div className="md:col-span-2 text-sm font-bold text-blue-dark">{row.price}</div>
                       <div className="md:col-span-2 text-xs text-ink-40">{row.timeline}</div>
                       <div className="md:col-span-4 text-xs text-ink-40 leading-relaxed">{row.notes}</div>
                     </div>
@@ -293,7 +278,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── Add-Ons ── */}
+      {/* Add-Ons */}
       <section className="section-pad bg-bg-surface">
         <div className="container-site px-6 lg:px-8">
           <SectionHeader
@@ -305,14 +290,14 @@ export default function PricingPage() {
           <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
             {addOns.map((item, i) => (
               <div key={i} className="card-dark p-5 flex items-start gap-4">
-                <div className="w-9 h-9 rounded-xl bg-blue/10 border border-blue/20 flex items-center justify-center shrink-0">
-                  <svg className="w-4 h-4 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-9 h-9 rounded-xl bg-blue-light border border-blue/20 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-blue-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white mb-0.5">{item.service}</p>
-                  <p className="text-sm font-bold text-blue mb-1">{item.price}</p>
+                  <p className="text-sm font-bold mb-0.5" style={{ color: '#1a2b4a' }}>{item.service}</p>
+                  <p className="text-sm font-bold text-blue-dark mb-1">{item.price}</p>
                   <p className="text-xs text-ink-40 leading-relaxed">{item.notes}</p>
                 </div>
               </div>
@@ -321,17 +306,20 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-20 md:py-28 bg-bg relative overflow-hidden text-center">
+      {/* CTA — bright blue fill */}
+      <section
+        className="relative py-24 md:py-32 text-center overflow-hidden"
+        style={{ backgroundColor: '#4a90e2' }}
+      >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(153,195,251,0.09) 0%, transparent 65%)' }}
+          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,255,255,0.07) 0%, transparent 65%)' }}
         />
         <div className="relative z-10 container-site px-6 lg:px-8">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-5">
             Not Sure Where to Start?
           </h2>
-          <p className="text-ink-40 max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
             Book a free 30-minute discovery call. We&apos;ll help you figure out exactly what services
             make sense for your business and budget.
           </p>
@@ -339,7 +327,8 @@ export default function PricingPage() {
             href="https://www.hmm.agency/contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-base font-black bg-blue text-bg hover:bg-blue-light transition-all duration-200 shadow-2xl shadow-blue/25"
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-base font-black bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
+            style={{ color: '#4a90e2' }}
           >
             Book a Free Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -347,7 +336,7 @@ export default function PricingPage() {
             </svg>
           </a>
           <div className="mt-6">
-            <Link href="/" className="text-sm text-ink-40 hover:text-blue transition-colors">
+            <Link href="/" className="text-sm text-white/60 hover:text-white/90 transition-colors">
               ← Back to Home
             </Link>
           </div>
