@@ -12,8 +12,9 @@ const config: Config = {
         // HMM SBM brand colors — cool blues dominant
         blue: {
           DEFAULT: '#99c3fb',
-          light: '#c4dafe',
-          dark: '#6aa3f5',
+          light: '#dbeafe',
+          dark: '#3d7ef0',
+          fill: '#4a90e2',
         },
         green: {
           DEFAULT: '#06c664',
@@ -28,8 +29,8 @@ const config: Config = {
           100: '#000000',
           80: '#3e4b50',
           60: '#6e787c',
-          40: '#9fa5a7',
-          20: '#cfd2d3',
+          40: '#6b7280',
+          20: '#9ca3af',
         },
         white: {
           DEFAULT: '#ffffff',
@@ -37,12 +38,13 @@ const config: Config = {
           100: '#e7e7e7',
         },
         tan: '#f6ede5',
-        // Site dark backgrounds
+        navy: '#1a2b4a',
+        // Site backgrounds — light theme
         bg: {
-          DEFAULT: '#080e18',
-          surface: '#0f1c2e',
-          card: '#132035',
-          border: '#1e3350',
+          DEFAULT: '#ffffff',
+          surface: '#f0f7ff',
+          card: '#ffffff',
+          border: '#dbeafe',
         },
       },
       fontFamily: {
@@ -50,21 +52,17 @@ const config: Config = {
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+        'float': 'floatY 4s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
           from: { opacity: '0', transform: 'translateY(24px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
-        glowPulse: {
-          '0%, 100%': { opacity: '0.6' },
-          '50%': { opacity: '1' },
+        floatY: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' },
         },
-      },
-      backgroundImage: {
-        'blue-glow': 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(153,195,251,0.25) 0%, transparent 60%)',
-        'blue-glow-bottom': 'radial-gradient(ellipse 60% 40% at 50% 120%, rgba(153,195,251,0.2) 0%, transparent 60%)',
       },
     },
   },

@@ -7,9 +7,8 @@ const features = [
       </svg>
     ),
     title: 'Hyper-Local Focus',
-    description:
-      'We specialize in Oklahoma small businesses and understand the local market. We\'re not a faceless agency — we\'re your neighbors.',
-    color: '#99c3fb',
+    description: "We specialize in Oklahoma small businesses and understand the local market. We're not a faceless agency — we're your neighbors.",
+    color: '#3d7ef0',
   },
   {
     icon: (
@@ -18,8 +17,7 @@ const features = [
       </svg>
     ),
     title: 'Education-First Approach',
-    description:
-      'We don\'t just do the work — we teach you what we\'re doing and why. You\'ll actually understand your marketing.',
+    description: "We don't just do the work — we teach you what we're doing and why. You'll actually understand your marketing.",
     color: '#06c664',
   },
   {
@@ -29,8 +27,7 @@ const features = [
       </svg>
     ),
     title: 'Full-Service Under One Roof',
-    description:
-      'Social media, SEO, email marketing, paid ads, and web design — all coordinated by one team that knows your brand.',
+    description: 'Social media, SEO, email marketing, paid ads, and web design — all coordinated by one team that knows your brand.',
     color: '#f5b62f',
   },
   {
@@ -40,22 +37,18 @@ const features = [
       </svg>
     ),
     title: 'Transparent, Proven Results',
-    description:
-      'Clear monthly reports, no vanity metrics. We track what actually moves the needle for your business.',
-    color: '#eea7a8',
+    description: 'Clear monthly reports, no vanity metrics. We track what actually moves the needle for your business.',
+    color: '#e36138',
   },
 ]
 
 export default function Differentiators() {
   return (
-    <section className="py-20 md:py-28 bg-bg relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-blue-glow-bottom pointer-events-none opacity-60" />
-
-      <div className="relative z-10 container-site px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-white">
+      <div className="container-site px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="section-label mx-auto">Why HMM</div>
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
             Not Your Average{' '}
             <span className="gradient-text">Marketing Agency</span>
           </h2>
@@ -68,24 +61,17 @@ export default function Differentiators() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {features.map((feature, i) => (
             <div key={i} className="card-dark p-7 flex flex-col gap-4">
-              {/* Icon */}
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: `${feature.color}15`, color: feature.color, border: `1px solid ${feature.color}25` }}
+                style={{ background: `${feature.color}12`, color: feature.color, border: `1px solid ${feature.color}22` }}
               >
                 {feature.icon}
               </div>
-
               <div>
-                <h3 className="text-base font-bold text-white mb-2">{feature.title}</h3>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#1a2b4a' }}>{feature.title}</h3>
                 <p className="text-sm text-ink-40 leading-relaxed">{feature.description}</p>
               </div>
-
-              {/* Color accent line at bottom */}
-              <div
-                className="mt-auto h-0.5 rounded-full w-10"
-                style={{ background: feature.color, opacity: 0.5 }}
-              />
+              <div className="mt-auto h-0.5 rounded-full w-10" style={{ background: feature.color, opacity: 0.4 }} />
             </div>
           ))}
         </div>

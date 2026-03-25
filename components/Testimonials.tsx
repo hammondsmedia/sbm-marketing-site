@@ -1,35 +1,30 @@
 const testimonials = [
   {
-    quote:
-      'Garrett and Grace have been unbelievable to work with. They have quickly found key issues in our system and gotten them resolved. We have already seen a big change in our online visibility in our community. Could not recommend them more!!',
+    quote: 'Garrett and Grace have been unbelievable to work with. They have quickly found key issues in our system and gotten them resolved. We have already seen a big change in our online visibility in our community. Could not recommend them more!!',
     name: 'Dr. Jordan Edwards',
     title: 'Owner',
     company: 'Revive Family Chiropractic',
   },
   {
-    quote:
-      'Garrett is great to work with! He is extremely knowledgeable and has a creative mindset.',
+    quote: 'Garrett is great to work with! He is extremely knowledgeable and has a creative mindset.',
     name: 'Elise Stansel',
     title: 'Owner',
     company: 'Elise Stansel: All State',
   },
   {
-    quote:
-      "Incredibly knowledgeable and experts in their field. It's always refreshing to speak with somebody who is able to teach on stuff I have no idea about, especially when it comes to social media and Google. That is like a foreign language to me and Mr. Hammonds really has it down!",
+    quote: "Incredibly knowledgeable and experts in their field. It's always refreshing to speak with somebody who is able to teach on stuff I have no idea about, especially when it comes to social media and Google. That is like a foreign language to me and Mr. Hammonds really has it down!",
     name: 'Robert Norris',
     title: 'Owner',
     company: 'CertaPro Painters® of OKC-Edmond, OK',
   },
   {
-    quote:
-      "Hammonds Media is simply amazing. My wife and I are so grateful to have crossed paths with Garrett and Grace. They laid out clear and defined objectives over the course of several months for our small business, and we were thoroughly impressed by their attention to detail. You can genuinely feel their passion, even through a screen during meetings. Garrett's breakdown of marketing strategies and tiers introduced us to concepts we didn't even know existed! He takes an education-first approach, and we've been blown away by his industry knowledge and expertise. I can't recommend Hammonds Media enough for all your digital needs.",
+    quote: "Hammonds Media is simply amazing. My wife and I are so grateful to have crossed paths with Garrett and Grace. They laid out clear and defined objectives over the course of several months for our small business, and we were thoroughly impressed by their attention to detail. You can genuinely feel their passion, even through a screen during meetings. Garrett's breakdown of marketing strategies and tiers introduced us to concepts we didn't even know existed! He takes an education-first approach, and we've been blown away by his industry knowledge and expertise. I can't recommend Hammonds Media enough for all your digital needs.",
     name: 'Rob Hair',
     title: 'Owner',
     company: 'Exterior Cleaning Professionals',
   },
   {
-    quote:
-      'Without Hammonds Media, Cornerstone Civil Engineering would not be where it is today! Their industry experience, cooperative collaboration and guidance helped us create our logo and brand identity. They created our website and provide exceptional support while we worked our way through opening our company. We are thankful for them and continue to call on Hammonds Media with all of our marketing and SEO needs!',
+    quote: 'Without Hammonds Media, Cornerstone Civil Engineering would not be where it is today! Their industry experience, cooperative collaboration and guidance helped us create our logo and brand identity. They created our website and provide exceptional support while we worked our way through opening our company. We are thankful for them and continue to call on Hammonds Media with all of our marketing and SEO needs!',
     name: 'Hollis Allen',
     title: 'Founder & Principle',
     company: 'Cornerstone Civil Engineering',
@@ -38,26 +33,19 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-bg-surface relative overflow-hidden">
-      {/* Decorative glow */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(153,195,251,0.06) 0%, transparent 70%)' }}
-      />
-
+    <section className="py-20 md:py-28 bg-bg-surface">
       <div className="container-site px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="section-label mx-auto">Testimonials</div>
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
             Real Businesses.{' '}
             <span className="gradient-text">Real Results.</span>
           </h2>
           <p className="text-ink-40 leading-relaxed">
-            Don't take our word for it — here's what our clients say.
+            Don&apos;t take our word for it — here&apos;s what our clients say.
           </p>
         </div>
 
-        {/* Masonry-style grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
           {testimonials.map((t, i) => (
             <div key={i} className="card-dark p-7 break-inside-avoid flex flex-col gap-4">
@@ -77,15 +65,12 @@ export default function Testimonials() {
 
               {/* Attribution */}
               <div className="flex items-center gap-3 pt-2 border-t border-bg-border">
-                {/* Avatar initials */}
-                <div className="w-9 h-9 rounded-full bg-blue/15 border border-blue/25 flex items-center justify-center text-xs font-bold text-blue shrink-0">
+                <div className="w-9 h-9 rounded-full bg-blue-light border border-blue/30 flex items-center justify-center text-xs font-bold text-blue-dark shrink-0">
                   {t.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">{t.name}</p>
-                  <p className="text-xs text-ink-40">
-                    {t.title}, {t.company}
-                  </p>
+                  <p className="text-sm font-bold" style={{ color: '#1a2b4a' }}>{t.name}</p>
+                  <p className="text-xs text-ink-40">{t.title}, {t.company}</p>
                 </div>
               </div>
             </div>

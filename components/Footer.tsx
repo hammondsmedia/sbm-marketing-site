@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-surface border-t border-bg-border">
+    <footer style={{ backgroundColor: '#1a2b4a' }}>
       <div className="container-site section-pad">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-1">
+          <div>
             <Link href="/">
               <Image
                 src="/logo.svg"
@@ -17,7 +17,7 @@ export default function Footer() {
                 className="h-9 w-auto mb-4"
               />
             </Link>
-            <p className="text-ink-40 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Helping small businesses grow through smart, strategic, and
               results-driven digital marketing.
             </p>
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-widest">
+            <h4 className="text-white font-semibold text-xs mb-4 uppercase tracking-widest">
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -40,15 +40,12 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-ink-40 hover:text-blue text-sm transition-colors"
+                      className="text-white/50 hover:text-white text-sm transition-colors"
                     >
                       {item.label}
                     </a>
                   ) : (
-                    <Link
-                      href={item.href}
-                      className="text-ink-40 hover:text-blue text-sm transition-colors"
-                    >
+                    <Link href={item.href} className="text-white/50 hover:text-white text-sm transition-colors">
                       {item.label}
                     </Link>
                   )}
@@ -59,17 +56,17 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-widest">
+            <h4 className="text-white font-semibold text-xs mb-4 uppercase tracking-widest">
               Ready to grow?
             </h4>
-            <p className="text-ink-40 text-sm leading-relaxed mb-5">
+            <p className="text-white/50 text-sm leading-relaxed mb-5">
               Schedule a free discovery call and let&apos;s talk about your goals.
             </p>
             <a
               href="https://www.hmm.agency/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-blue text-bg hover:bg-blue-light transition-colors shadow-lg shadow-blue/20"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-blue-fill text-white hover:opacity-90 transition-opacity shadow-lg"
             >
               Get In Touch
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,14 +76,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-bg-border flex flex-col sm:flex-row items-center justify-between gap-3 text-ink-40 text-xs">
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-xs">
           <p>© {new Date().getFullYear()} Hammonds Media. All rights reserved.</p>
-          <a
-            href="https://www.hmm.agency"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue transition-colors"
-          >
+          <a href="https://www.hmm.agency" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
             hmm.agency
           </a>
         </div>
