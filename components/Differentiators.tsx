@@ -32,8 +32,7 @@ export default function Differentiators() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="section-label-maroon mx-auto">Why HMM</div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
-            Not Your Average{' '}
-            <span className="gradient-text">Marketing Agency</span>
+            Not Your Average <span className="gradient-text">Marketing Agency</span>
           </h2>
           <p className="text-ink-40 leading-relaxed">
             We built HMM Small Business Marketing specifically for local business owners who need
@@ -41,7 +40,7 @@ export default function Differentiators() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
           {features.map((feature, i) => (
             <div key={i} className="card-dark p-7 flex flex-col gap-4">
               <div
