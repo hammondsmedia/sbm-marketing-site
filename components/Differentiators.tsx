@@ -46,8 +46,9 @@ export default function Differentiators() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container-site px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="section-label mx-auto">Why HMM</div>
+        {/* Changed 'text-center' to 'text-left' and removed 'mx-auto' */}
+        <div className="text-left max-w-2xl mb-14">
+          <div className="section-label">Why HMM</div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
             Not Your Average{' '}
             <span className="gradient-text">Marketing Agency</span>
