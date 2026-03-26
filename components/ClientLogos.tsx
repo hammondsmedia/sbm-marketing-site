@@ -1,50 +1,31 @@
-const clients = [
-  { name: 'Revive Family Chiropractic', initials: 'RFC' },
-  { name: 'Elise Stansel: All State', initials: 'ES' },
-  { name: 'CertaPro Painters OKC-Edmond', initials: 'CP' },
-  { name: 'Exterior Cleaning Professionals', initials: 'ECP' },
-  { name: 'Cornerstone Civil Engineering', initials: 'CCE' },
-  { name: 'Your Business Here', initials: '?' },
-]
+import { getClientLogos } from '@/lib/contentful'
 
-export default function ClientLogos() {
+export default async function ClientLogos() {
+  const logos = await getClientLogos()
+  const track = [...logos, ...logos] // duplicate for seamless infinite loop
+
   return (
-    <section className="py-14 md:py-20 bg-white border-y border-bg-border">
-      <div className="container-site px-6 lg:px-8">
-        <p className="text-center text-xs font-bold uppercase tracking-widest text-ink-40 mb-10">
-          Trusted by local businesses
-        </p>
+    <section className="py-12 md:py-16 bg-white border-y border-bg-border">
+      <p className="text-center text-xs font-bold uppercase tracking-widest text-ink-40 mb-10">
+        Trusted by local businesses
+      </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
-          {clients.map((client, i) => (
-            <div
-              key={i}
-              className={`flex flex-col items-center justify-center gap-3 p-5 rounded-2xl border transition-all duration-300 ${
-                client.name === 'Your Business Here'
-                  ? 'border-dashed border-blue/40 bg-bg-surface hover:border-blue-dark/40'
-                  : 'border-bg-border bg-white hover:border-blue shadow-sm hover:shadow-md'
-              }`}
-            >
-              <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center text-sm font-black ${
-                  client.name === 'Your Business Here'
-                    ? 'border-2 border-dashed border-blue/30 text-blue/50'
-                    : 'bg-blue-light text-blue-dark border border-blue/20'
-                }`}
-              >
-                {client.initials}
-              </div>
-              <p
-                className={`text-center text-[10px] font-semibold leading-tight ${
-                  client.name === 'Your Business Here' ? 'text-blue/40' : 'text-ink-40'
-                }`}
-              >
-                {client.name}
-              </p>
-            </div>
-          ))}
+      {logos.length > 0 ? (
+        <div className="marquee-outer">
+          <div className="marquee-track flex items-center gap-16 w-max px-8">
+            {track.map((logo, i) => (
+              <img
+                key={i}
+                src={logo.url}
+                alt={logo.title}
+                className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <p className="text-center text-xs text-ink-40">Client logos coming soon.</p>
+      )}
     </section>
   )
 }

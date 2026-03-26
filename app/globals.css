@@ -174,3 +174,12 @@ body {
 /* Hide scrollbar */
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Logo marquee */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-outer { overflow: hidden; }
+.marquee-track { animation: marquee-scroll 30s linear infinite; }
+.marquee-outer:hover .marquee-track { animation-play-state: paused; }
