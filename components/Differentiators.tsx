@@ -42,68 +42,40 @@ const features = [
   },
 ]
 
-export default function PainPointsSlider() {
+export default function Differentiators() {
   return (
-    <section className="py-20 bg-[#f8fbff] overflow-hidden">
-      {/* 1. Header Section - Defines the left alignment boundary */}
-      <div className="container-site px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-[2px] bg-blue-500" />
-            <span className="text-xs font-bold tracking-widest uppercase text-blue-600">We Get It</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6 text-[#1a2b4a]">
-            We Know What Keeps You <span className="text-blue-500">Up at Night</span>
+    <section className="py-20 md:py-28 bg-white">
+      <div className="container-site mt-12 -mx-6 px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="section-label mx-auto">Why HMM</div>
+          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
+            Not Your Average{' '}
+            <span className="gradient-text">Marketing Agency</span>
           </h2>
-          
-          <p className="text-lg text-slate-600 leading-relaxed mb-12">
-            Sound familiar? You're not alone. These are the exact problems we 
-            solve every day for small business owners like you.
+          <p className="text-ink-40 leading-relaxed">
+            We built HMM Small Business Marketing specifically for local business owners who need
+            real results, real communication, and real value.
           </p>
         </div>
-      </div>
 
-      {/* 2. Scroller Section */}
-      {/* The '-mx-6' pulls the container to the screen edge.
-          The 'px-6' pushes the content back in to match the header.
-      */}
-      <div className="container-site px-6 lg:px-8">
-        <div className="-mx-6 px-6 lg:-mx-8 lg:px-8 overflow-visible">
-          <div className="flex gap-6 overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory">
-            {painPoints.map((point, i) => (
-              <div 
-                key={i} 
-                className="min-w-[300px] md:min-w-[350px] bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col snap-start"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {features.map((feature, i) => (
+            <div key={i} className="card-dark p-7 flex flex-col gap-4">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: `${feature.color}12`, color: feature.color, border: `1px solid ${feature.color}22` }}
               >
-                {/* Icon Circle */}
-                <div 
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6"
-                  style={{ background: `${point.color}10`, border: `1px solid ${point.color}20` }}
-                >
-                  {point.icon}
-                </div>
-
-                <h3 
-                  className="text-xl font-bold mb-4 leading-snug"
-                  style={{ color: point.color }}
-                >
-                  {point.title}
-                </h3>
-
-                <p className="text-slate-500 leading-relaxed mb-8">
-                  {point.description}
-                </p>
-
-                <div className="mt-auto flex items-center gap-2 text-sm font-bold" style={{ color: point.color }}>
-                  <span>✓</span>
-                  <span>We solve this</span>
-                </div>
+                {feature.icon}
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#1a2b4a' }}>{feature.title}</h3>
+                <p className="text-sm text-ink-40 leading-relaxed">{feature.description}</p>
+              </div>
+              <div className="mt-auto h-0.5 rounded-full w-10" style={{ background: feature.color, opacity: 0.4 }} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
