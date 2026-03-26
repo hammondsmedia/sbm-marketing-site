@@ -17,6 +17,7 @@ export default function Footer() {
                 className="h-9 w-auto mb-4"
               />
             </Link>
+            <div className="w-8 h-1 rounded-full mb-3" style={{ background: '#551344' }} />
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Helping small businesses grow through smart, strategic, and
               results-driven digital marketing.

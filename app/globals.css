@@ -123,6 +123,27 @@ body {
   border-radius: 2px;
 }
 
+/* Maroon variant of section label */
+.section-label-maroon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #551344;
+  margin-bottom: 1rem;
+}
+.section-label-maroon::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #551344;
+  border-radius: 2px;
+}
+
 /* On blue-fill sections, section label is white */
 .section-label-white {
   display: inline-flex;
