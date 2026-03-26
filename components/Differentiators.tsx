@@ -45,7 +45,7 @@ const features = [
 export default function Differentiators() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="container-site mt-12 -mx-6 px-6 lg:px-8">
+      <div className="container-site px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="section-label mx-auto">Why HMM</div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
@@ -58,7 +58,7 @@ export default function Differentiators() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {features.map((feature, i) => (
             <div key={i} className="card-dark p-7 flex flex-col gap-4">
               <div
