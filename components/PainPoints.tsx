@@ -4,42 +4,42 @@ import { useRef } from 'react'
 
 const painPoints = [
   {
-    icon: '/icons/hmm-target-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-1.svg',
     pain: '"I don\'t have time for marketing."',
     solution:
       'We handle everything — content creation, scheduling, analytics, and reporting — so you can focus on running your business.',
     color: '#3d7ef0',
   },
   {
-    icon: '/icons/hmm-data-analytics-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-2.svg',
     pain: '"I don\'t know if my marketing is actually working."',
     solution:
       'You get clear, jargon-free monthly reports that show exactly what\'s happening and why it matters for your business.',
     color: '#06c664',
   },
   {
-    icon: '/icons/hmm-crm-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-3.svg',
     pain: '"I\'ve wasted money on ads with no results."',
     solution:
       'We build campaigns on proven strategy, not guesswork. Every ad dollar is tracked and optimized — no more money down the drain.',
     color: '#f5b62f',
   },
   {
-    icon: '/icons/hmm-search-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-4.svg',
     pain: '"My competitors are outranking me on Google."',
     solution:
       'Our SEO and Google Business Profile work puts your business where customers are already searching — right in front of them.',
     color: '#e36138',
   },
   {
-    icon: '/icons/hmm-ai-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-5.svg',
     pain: '"I don\'t know where to even start."',
     solution:
       'We start with a strategy session to understand your goals, then lay out a clear, step-by-step marketing roadmap tailored to you.',
     color: '#551344',
   },
   {
-    icon: '/icons/hmm-social-media-icon.svg',
+    illustration: '/illustrations/people/hmm-profile-illustration-6.svg',
     pain: '"My social media is all over the place."',
     solution:
       'We build a consistent brand voice and content calendar that keeps your audience engaged and your feed looking professional — every week.',
@@ -105,16 +105,15 @@ export default function PainPoints() {
           {painPoints.map((item, i) => (
             <div
               key={i}
-              className="shrink-0 w-[300px] md:w-[320px] card-dark p-7 flex flex-col gap-5"
+              className="shrink-0 w-[300px] md:w-[320px] card-dark overflow-hidden flex flex-col"
               style={{ scrollSnapAlign: 'start' }}
             >
-              {/* Icon */}
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-                style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}
-              >
-                <img src={item.icon} alt="" className="w-8 h-8 object-contain" />
+              {/* Person illustration */}
+              <div className="w-full h-40 flex items-center justify-center overflow-hidden bg-bg-surface">
+                <img src={item.illustration} alt="" className="h-full w-full object-cover" />
               </div>
+
+              <div className="p-7 flex flex-col gap-5 flex-1">
 
               {/* Pain */}
               <div>
@@ -131,6 +130,7 @@ export default function PainPoints() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
                 We solve this
+              </div>
               </div>
             </div>
           ))}
