@@ -71,7 +71,7 @@ export default function Hero() {
             <div className="mt-16 flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-4">
               {[
                 { value: '5★', label: 'Client Reviews' },
-                { value: '10+', label: 'Businesses Served' },
+                { value: '100+', label: 'Businesses Served' },
                 { value: 'Local', label: 'Oklahoma-Based' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
