@@ -1,3 +1,10 @@
+import { getTestimonialPhotos } from '@/lib/contentful'
+
+// Contentful asset title → testimonial name (for any mismatches)
+const PHOTO_ALIASES: Record<string, string> = {
+  'Jacob Edwards': 'Dr. Jordan Edwards',
+}
+
 const testimonials = [
   {
     quote: 'Garrett and Grace have been unbelievable to work with. They have quickly found key issues in our system and gotten them resolved. We have already seen a big change in our online visibility in our community. Could not recommend them more!!',
@@ -31,7 +38,13 @@ const testimonials = [
   },
 ]
 
-export default function Testimonials() {
+export default async function Testimonials() {
+  const rawPhotos = await getTestimonialPhotos()
+  const photos: Record<string, string> = {}
+  for (const [assetName, url] of Object.entries(rawPhotos)) {
+    photos[PHOTO_ALIASES[assetName] ?? assetName] = url
+  }
+
   return (
     <section className="py-20 md:py-28 bg-bg-surface">
       <div className="container-site px-6 lg:px-8">
@@ -72,9 +85,17 @@ export default function Testimonials() {
 
               {/* Attribution */}
               <div className="flex items-center gap-3 pt-2 border-t border-bg-border">
-                <div className="w-9 h-9 rounded-full bg-blue-light border border-blue/30 flex items-center justify-center text-xs font-bold text-blue-dark shrink-0">
-                  {t.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
-                </div>
+                {photos[t.name] ? (
+                  <img
+                    src={photos[t.name]}
+                    alt={t.name}
+                    className="w-9 h-9 rounded-full object-cover shrink-0"
+                  />
+                ) : (
+                  <div className="w-9 h-9 rounded-full bg-blue-light border border-blue/30 flex items-center justify-center text-xs font-bold text-blue-dark shrink-0">
+                    {t.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                  </div>
+                )}
                 <div>
                   <p className="text-sm font-bold" style={{ color: '#1a2b4a' }}>{t.name}</p>
                   <p className="text-xs text-ink-40">{t.title}, {t.company}</p>
