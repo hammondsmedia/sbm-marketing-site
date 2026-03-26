@@ -46,11 +46,10 @@ export default function Differentiators() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container-site px-6 lg:px-8">
-        <div className="text-left max-w-2xl mb-14">
+        <div className="text-left max-w-2xl">
           <div className="section-label">Why HMM</div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
-            Not Your Average{' '}
-            <span className="gradient-text">Marketing Agency</span>
+            Not Your Average <span className="gradient-text">Marketing Agency</span>
           </h2>
           <p className="text-ink-40 leading-relaxed">
             We built HMM Small Business Marketing specifically for local business owners who need
@@ -58,24 +57,22 @@ export default function Differentiators() {
           </p>
         </div>
 
-        <div className="mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {features.map((feature, i) => (
-              <div key={i} className="card-dark p-7 flex flex-col gap-4">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: `${feature.color}12`, color: feature.color, border: `1px solid ${feature.color}22` }}
-                >
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="text-base font-bold mb-2" style={{ color: '#1a2b4a' }}>{feature.title}</h3>
-                  <p className="text-sm text-ink-40 leading-relaxed">{feature.description}</p>
-                </div>
-                <div className="mt-auto h-0.5 rounded-full w-10" style={{ background: feature.color, opacity: 0.4 }} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
+          {features.map((feature, i) => (
+            <div key={i} className="card-dark p-7 flex flex-col gap-4">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: `${feature.color}12`, color: feature.color, border: `1px solid ${feature.color}22` }}
+              >
+                {feature.icon}
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#1a2b4a' }}>{feature.title}</h3>
+                <p className="text-sm text-ink-40 leading-relaxed">{feature.description}</p>
+              </div>
+              <div className="mt-auto h-0.5 rounded-full w-10" style={{ background: feature.color, opacity: 0.4 }} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
