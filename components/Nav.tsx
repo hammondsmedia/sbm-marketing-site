@@ -69,7 +69,8 @@ export default function Nav() {
               href="https://www.hmm.agency/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-5 py-2.5 rounded-full text-sm font-bold bg-blue-dark text-white hover:opacity-90 transition-opacity duration-200 shadow-md shadow-blue-dark/20"
+              className="ml-2 px-5 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity duration-200 shadow-md"
+              style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
             >
               Get Started
             </a>
@@ -120,7 +121,8 @@ export default function Nav() {
             href="https://www.hmm.agency/contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 px-5 py-3 rounded-full text-center text-sm font-bold bg-blue-dark text-white hover:opacity-90 transition-opacity shadow-md"
+            className="mt-2 px-5 py-3 rounded-full text-center text-sm font-bold hover:opacity-90 transition-opacity shadow-md"
+            style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
             onClick={() => setMenuOpen(false)}
           >
             Get Started

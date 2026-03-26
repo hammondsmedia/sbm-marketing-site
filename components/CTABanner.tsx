@@ -39,8 +39,8 @@ export default function CTABanner() {
                 href="https://www.hmm.agency/contact"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-base font-black bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
-                style={{ color: '#4a90e2' }}
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-base font-black transition-all duration-200 shadow-xl hover:opacity-90"
+                style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
               >
                 Book a Free Call
                 <svg
@@ -54,7 +54,8 @@ export default function CTABanner() {
               </a>
               <a
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full text-base font-bold border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full text-base font-bold transition-all duration-200 hover:opacity-90"
+                style={{ backgroundColor: '#f5b62f', color: '#1a2b4a' }}
               >
                 View Pricing First
               </a>

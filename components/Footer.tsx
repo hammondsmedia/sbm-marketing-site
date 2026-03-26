@@ -67,7 +67,8 @@ export default function Footer() {
               href="https://www.hmm.agency/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-blue-fill text-white hover:opacity-90 transition-opacity shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity shadow-lg"
+              style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
             >
               Get In Touch
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
