@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 100% 80% at 70% 50%, rgba(255,255,255,0.08) 0%, transparent 60%)',
+            'radial-gradient(ellipse 100% 80% at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%)',
         }}
       />
 
@@ -22,62 +22,77 @@ export default function Hero() {
       <div className="absolute bottom-1/3 right-1/4 w-3 h-3 rounded-full bg-white/30 pointer-events-none" />
       <div className="absolute top-2/3 right-16 w-2 h-2 rounded-full bg-white/40 pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 container-site px-6 lg:px-8 py-32 text-center">
+      {/* Content — two columns on large screens */}
+      <div className="relative z-10 container-site px-6 lg:px-8 py-32 w-full">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
 
-        {/* Eyebrow badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-white" />
-          HMM Small Business Marketing
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 max-w-4xl mx-auto text-white">
-          Marketing That{' '}
-          <span className="italic font-black">Actually Works</span>
-          <br />
-          for Small Businesses
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We help local business owners get seen online, attract more customers, and grow
-          — without the guesswork or big-agency price tags.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link
-            href="/pricing"
-            className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
-            style={{ color: '#4a90e2' }}
-          >
-            See Our Packages
-          </Link>
-          <a
-            href="https://www.hmm.agency/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
-          >
-            Get a Free Consultation
-          </a>
-        </div>
-
-        {/* Micro-stats */}
-        <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-4">
-          {[
-            { value: '5★', label: 'Client Reviews' },
-            { value: '10+', label: 'Businesses Served' },
-            { value: 'Local', label: 'Oklahoma-Based' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl font-black text-white">{stat.value}</div>
-              <div className="text-xs font-semibold text-white/60 uppercase tracking-widest mt-0.5">
-                {stat.label}
-              </div>
+          {/* Left: text + CTAs */}
+          <div className="text-center lg:text-left">
+            {/* Eyebrow badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              HMM Small Business Marketing
             </div>
-          ))}
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 text-white">
+              Marketing That{' '}
+              <span className="italic font-black">Actually Works</span>
+              <br />
+              for Small Businesses
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+              We help local business owners get seen online, attract more customers, and grow
+              — without the guesswork or big-agency price tags.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <Link
+                href="/pricing"
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
+                style={{ color: '#4a90e2' }}
+              >
+                See Our Packages
+              </Link>
+              <a
+                href="https://www.hmm.agency/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
+              >
+                Get a Free Consultation
+              </a>
+            </div>
+
+            {/* Micro-stats */}
+            <div className="mt-16 flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-4">
+              {[
+                { value: '5★', label: 'Client Reviews' },
+                { value: '10+', label: 'Businesses Served' },
+                { value: 'Local', label: 'Oklahoma-Based' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center lg:text-left">
+                  <div className="text-2xl font-black text-white">{stat.value}</div>
+                  <div className="text-xs font-semibold text-white/60 uppercase tracking-widest mt-0.5">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: illustration (desktop only) */}
+          <div className="hidden lg:flex justify-center items-center">
+            <img
+              src="/illustrations/hmm-remote-work-illustration.svg"
+              alt=""
+              className="w-full max-w-lg h-auto"
+            />
+          </div>
+
         </div>
       </div>
 

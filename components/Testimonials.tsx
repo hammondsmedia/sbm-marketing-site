@@ -36,7 +36,7 @@ export default function Testimonials() {
     <section className="py-20 md:py-28 bg-bg-surface">
       <div className="container-site px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="section-label mx-auto">Testimonials</div>
+          <div className="section-label-maroon mx-auto">Testimonials</div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4" style={{ color: '#1a2b4a' }}>
             Real Businesses.{' '}
             <span className="gradient-text">Real Results.</span>
@@ -59,9 +59,16 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-sm text-ink-40 leading-relaxed italic flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
+              <div className="relative flex-1">
+                <span
+                  className="absolute -top-3 -left-1 text-5xl font-black leading-none pointer-events-none select-none"
+                  style={{ color: '#551344', opacity: 0.12 }}
+                  aria-hidden="true"
+                >&ldquo;</span>
+                <blockquote className="text-sm text-ink-40 leading-relaxed italic relative">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+              </div>
 
               {/* Attribution */}
               <div className="flex items-center gap-3 pt-2 border-t border-bg-border">

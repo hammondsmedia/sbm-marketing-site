@@ -23,6 +23,8 @@ const config: Config = {
         yellow: '#f5b62f',
         orange: '#e36138',
         pink: '#eea7a8',
+        salmon: '#eca8a8',
+        maroon: '#551344',
         purple: '#521445',
         // Neutrals
         ink: {
