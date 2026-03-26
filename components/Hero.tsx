@@ -57,7 +57,7 @@ export default function Hero() {
                 See Our Packages
               </Link>
               <a
-                href="https://www.hmm.agency/contact"
+                href="https://www.hmm.agency/our-company/contact-us"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:opacity-90"

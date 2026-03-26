@@ -33,7 +33,7 @@ export default function Footer() {
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Pricing', href: '/pricing' },
-                { label: 'Contact', href: 'https://www.hmm.agency/contact', external: true },
+                { label: 'Contact', href: 'https://www.hmm.agency/our-company/contact-us', external: true },
               ].map((item) => (
                 <li key={item.label}>
                   {item.external ? (
@@ -64,7 +64,7 @@ export default function Footer() {
               Schedule a free discovery call and let&apos;s talk about your goals.
             </p>
             <a
-              href="https://www.hmm.agency/contact"
+              href="https://www.hmm.agency/our-company/contact-us"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity shadow-lg"

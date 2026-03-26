@@ -36,7 +36,7 @@ export default function CTABanner() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="https://www.hmm.agency/contact"
+                href="https://www.hmm.agency/our-company/contact-us"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full text-base font-black transition-all duration-200 shadow-xl hover:opacity-90"

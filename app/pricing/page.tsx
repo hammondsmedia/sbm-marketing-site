@@ -183,7 +183,7 @@ export default function PricingPage() {
                 </div>
 
                 <a
-                  href="https://www.hmm.agency/contact"
+                  href="https://www.hmm.agency/our-company/contact-us"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-8 w-full py-3 rounded-full text-sm font-bold text-center transition-all duration-200 hover:opacity-90 ${
@@ -325,7 +325,7 @@ export default function PricingPage() {
             make sense for your business and budget.
           </p>
           <a
-            href="https://www.hmm.agency/contact"
+            href="https://www.hmm.agency/our-company/contact-us"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-base font-black transition-all duration-200 shadow-xl hover:opacity-90"
