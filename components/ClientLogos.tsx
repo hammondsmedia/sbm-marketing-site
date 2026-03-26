@@ -18,7 +18,7 @@ export default async function ClientLogos() {
                 key={i}
                 src={logo.url}
                 alt={logo.title}
-                className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="h-16 w-auto max-w-[180px] object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
             ))}
           </div>
