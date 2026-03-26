@@ -15,12 +15,12 @@ export default function Hero() {
         }}
       />
 
-      {/* Decorative circles — white, low opacity */}
-      <div className="absolute top-16 right-16 md:right-32 w-72 h-72 rounded-full border border-white/15 animate-float pointer-events-none" style={{ animationDelay: '0s' }} />
-      <div className="absolute bottom-24 left-12 md:left-28 w-48 h-48 rounded-full border border-white/10 animate-float pointer-events-none" style={{ animationDelay: '1.8s' }} />
-      <div className="absolute top-1/3 left-12 w-5 h-5 rounded-full bg-white/20 pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 rounded-full bg-white/30 pointer-events-none" />
-      <div className="absolute top-2/3 right-16 w-2 h-2 rounded-full bg-white/40 pointer-events-none" />
+      {/* Decorative circles — HMM brand palette */}
+      <div className="absolute top-16 right-16 md:right-32 w-72 h-72 rounded-full border-2 animate-float pointer-events-none" style={{ animationDelay: '0s', borderColor: 'rgba(245,182,47,0.45)' }} />
+      <div className="absolute bottom-24 left-12 md:left-28 w-48 h-48 rounded-full border-2 animate-float pointer-events-none" style={{ animationDelay: '1.8s', borderColor: 'rgba(0,197,100,0.40)' }} />
+      <div className="absolute top-1/3 left-12 w-5 h-5 rounded-full pointer-events-none" style={{ backgroundColor: 'rgba(236,168,168,0.6)' }} />
+      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 rounded-full pointer-events-none" style={{ backgroundColor: 'rgba(245,182,47,0.7)' }} />
+      <div className="absolute top-2/3 right-16 w-2 h-2 rounded-full pointer-events-none" style={{ backgroundColor: 'rgba(85,19,68,0.55)' }} />
 
       {/* Content — two columns on large screens */}
       <div className="relative z-10 container-site px-6 lg:px-8 py-32 w-full">
@@ -29,8 +29,7 @@ export default function Hero() {
           {/* Left: text + CTAs */}
           <div className="text-center lg:text-left">
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-8">
               HMM Small Business Marketing
             </div>
 
@@ -52,8 +51,8 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <Link
                 href="/pricing"
-                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
-                style={{ color: '#4a90e2' }}
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold transition-all duration-200 shadow-xl hover:opacity-90"
+                style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
               >
                 See Our Packages
               </Link>
@@ -61,7 +60,8 @@ export default function Hero() {
                 href="https://www.hmm.agency/contact"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
+                className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:opacity-90"
+                style={{ backgroundColor: '#f5b62f', color: '#1a2b4a' }}
               >
                 Get a Free Consultation
               </a>

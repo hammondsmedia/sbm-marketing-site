@@ -102,67 +102,50 @@ body {
   transform: translateY(-3px);
 }
 
-/* Section label */
+/* Section label — pill badge style */
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: #551344;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue-dark);
   margin-bottom: 1rem;
 }
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background: var(--blue-dark);
-  border-radius: 2px;
-}
 
-/* Maroon variant of section label */
+/* Maroon variant — same pill style */
 .section-label-maroon {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: #551344;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #551344;
   margin-bottom: 1rem;
 }
-.section-label-maroon::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background: #551344;
-  border-radius: 2px;
-}
 
-/* On blue-fill sections, section label is white */
+/* On blue-fill sections — translucent white pill */
 .section-label-white {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
   margin-bottom: 1rem;
-}
-.section-label-white::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 2px;
 }
 
 /* Animations */

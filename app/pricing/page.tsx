@@ -115,8 +115,7 @@ export default function PricingPage() {
         <div className="absolute bottom-8 left-16 w-32 h-32 rounded-full border border-white/10 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }} />
 
         <div className="relative z-10 container-site px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-white border border-white/30 bg-white/10 mb-6">
             Transparent Pricing
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5">
@@ -187,11 +186,13 @@ export default function PricingPage() {
                   href="https://www.hmm.agency/contact"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-8 w-full py-3 rounded-full text-sm font-bold text-center transition-all duration-200 ${
-                    pkg.featured
-                      ? 'bg-blue-dark text-white hover:opacity-90 shadow-md shadow-blue-dark/20'
-                      : 'border border-blue-dark text-blue-dark hover:bg-blue-light'
+                  className={`mt-8 w-full py-3 rounded-full text-sm font-bold text-center transition-all duration-200 hover:opacity-90 ${
+                    pkg.featured ? 'shadow-md' : 'border-2'
                   }`}
+                  style={pkg.featured
+                    ? { backgroundColor: '#00c564', color: '#1a2b4a' }
+                    : { borderColor: '#00c564', color: '#00c564' }
+                  }
                 >
                   Get Started
                 </a>
@@ -327,8 +328,8 @@ export default function PricingPage() {
             href="https://www.hmm.agency/contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-base font-black bg-white hover:bg-white/90 transition-all duration-200 shadow-xl"
-            style={{ color: '#4a90e2' }}
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-base font-black transition-all duration-200 shadow-xl hover:opacity-90"
+            style={{ backgroundColor: '#00c564', color: '#1a2b4a' }}
           >
             Book a Free Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
