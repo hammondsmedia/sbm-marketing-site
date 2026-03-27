@@ -211,8 +211,8 @@ export default function PricingPage() {
             sub="Not ready for a full package? Start with one service and build from there."
           />
 
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-bg-border overflow-hidden shadow-sm">
+          <div className="max-w-4xl mx-auto overflow-x-auto">
+            <div className="rounded-2xl border border-bg-border overflow-hidden shadow-sm min-w-[580px]">
               <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-white border-b border-bg-border">
                 <div className="col-span-5 text-xs font-bold uppercase tracking-widest text-ink-40">Service</div>
                 <div className="col-span-2 text-xs font-bold uppercase tracking-widest text-ink-40">Price</div>
